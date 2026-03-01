@@ -1,0 +1,39 @@
+import numpy as np
+import pandas as pd
+
+
+df = pd.read_csv("day36_vectors.csv")
+
+
+# Provided vectors (edit if you want different values)
+feature = np.array([30.0, 50.0, 10.0])
+weights = np.array([0.05, 0.8, -0.1])
+
+v = np.array(feature)
+norm_v = np.linalg.norm(v)
+print("||v||:", norm_v)
+
+
+v = np.array(weights)
+norm_v = np.linalg.norm(v)
+print("||v||:", norm_v)
+
+
+v = np.array(feature)
+v_small1 = 0.1 * v
+v_neg1 = -2.0 * v
+
+
+v = np.array(weights)
+v_small2 = 0.1 * v
+v_neg2 = -2.0 * v
+
+feature = feature.reshape(-1, 1)
+u = feature.shape
+print("||u||:", u)
+u = np.array(weights)
+
+weights = weights.reshape(1,-1)
+t = weights.shape
+print("||t||:", t)
+t = np.array(weights)
